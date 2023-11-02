@@ -1,0 +1,80 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+        <!-- start wpo-page-title -->
+        <section class="wpo-page-title">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-xs-12">
+                        <div class="wpo-breadcumb-wrap">
+                            <h2>Service Single</h2>
+                            <ol class="wpo-breadcumb-wrap">
+                                <li><a href="index-2.html">Home</a></li>
+                                <li>Service Single</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div> <!-- end row -->
+            </div> <!-- end container -->
+        </section>
+        <!-- end page-title -->
+
+        <!-- wpo-service-single-area start -->
+        <div class="wpo-service-single-area section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-12">
+                        <div class="wpo-service-single-wrap">
+                            <div class="wpo-service-single-item">
+                                <div class="wpo-service-single-main-img">
+                                    <img src="{{service.image.url}}" alt="">
+                                </div>
+                                <div class="wpo-service-single-title">
+                                    <h3>{{service.title}}</h3>
+                                </div>
+                                <p>
+                                    {{service.description|safe}}
+                                </p>
+                                <div class="row mt-4">
+                                    <div class="col-md-6 col-sm-6 col-12">
+                                        <div class="wpo-p-details-img">
+                                            <img src="assets/images/service-single/2.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-12">
+                                        <div class="wpo-p-details-img">
+                                            <img src="assets/images/service-single/3.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-12">
+                        <div class="blog-sidebar">
+                            <div class="wpo-newsletter-widget widget">
+                                <h3>Enquiry</h3>
+                                <p></p>
+                                <form  method="post" class="form">
+                                    {% csrf_token %}
+                                    {{form.name}} <br>
+                                    {{form.phone}} <br>
+                                    {{form.email}}
+                                    
+                                    <button type="submit">Submit</button>
+                                </form>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- wpo-service-single-area end -->
+
+{% endblock %}

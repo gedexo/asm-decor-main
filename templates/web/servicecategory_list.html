@@ -1,0 +1,62 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+
+
+        <!-- start wpo-page-title -->
+        <section class="wpo-page-title">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-xs-12">
+                        <div class="wpo-breadcumb-wrap">
+                            <h2>Service</h2>
+                            <ol class="wpo-breadcumb-wrap">
+                                <li><a href="index-2.html">Home</a></li>
+                                <li>Service</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div> <!-- end row -->
+            </div> <!-- end container -->
+        </section>
+        <!-- end page-title -->
+
+        <!-- start wpo-service-section -->
+        <section class="wpo-service-section ">
+            
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-12">
+                        <div class="wpo-section-title">
+                            <span>WHY CHOOSE US?</span>
+                            <h2>Get All Facilities In One Station</h2>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="scervice-wrap">
+                    <div class="row gutter-y">
+                        {% for service in servicescategories %}
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="scervice-item item-height">
+                                <div class="scervice-item-img">
+                                    <img src="{{ service.icon.url }}" alt="">
+                                </div>
+                                <div class="scervice-item-text">
+                                    <a href="{% url "web:service-single" service.slug %}">
+                                        <h2>{{service.name}}</h2>
+                                    </a>
+                                    <p>{{service.description|truncatechars:50}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end wpo-service-section -->
+
+
+{% endblock %}

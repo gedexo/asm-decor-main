@@ -1,0 +1,354 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+
+        <!-- start of hero -->
+        <section class="wpo-hero-slider">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slide-inner slide-bg-image" data-background="{% static 'web/assets/images/slider/slide-1.jpg' %}">
+                            <!-- <div class="gradient-overlay"></div> -->
+                            <div class="container">
+                                <div class="slide-content">
+                                    <div data-swiper-parallax="300" class="slide-title">
+                                        <h2>Make your
+                                            statement
+                                            in style</h2>
+                                    </div>
+                                    <div data-swiper-parallax="400" class="slide-text">
+                                        <p>Lorem ipsum dolor sit amet sed, adipiscing elit, sed do eiusmod tempor
+                                            incididunt ut labore et dolore magna aliqua ut enim ad.</p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div data-swiper-parallax="500" class="slide-btns">
+                                        <a href="about.html" class="theme-btn">Explore more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- end slide-inner -->
+                    </div> <!-- end swiper-slide -->
+
+                    <div class="swiper-slide">
+                        <div class="slide-inner slide-bg-image" data-background="{% static 'web/assets/images/slider/slide-2.jpg' %}">
+                            <!-- <div class="gradient-overlay"></div> -->
+                            <div class="container">
+                                <div class="slide-content">
+                                    <div data-swiper-parallax="300" class="slide-title">
+                                        <h2>Simplicity wins over complexity</h2>
+                                    </div>
+                                    <div data-swiper-parallax="400" class="slide-text">
+                                        <p>Lorem ipsum dolor sit amet sed, adipiscing elit, sed do eiusmod tempor
+                                            incididunt ut labore et dolore magna aliqua ut enim ad..</p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div data-swiper-parallax="500" class="slide-btns">
+                                        <a href="about.html" class="theme-btn">Explore more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- end slide-inner -->
+                    </div> <!-- end swiper-slide -->
+                </div>
+                <!-- end swiper-wrapper -->
+
+                <!-- swipper controls -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+        <!-- end of wpo-hero-slide-section-->
+
+        <!-- start of wpo-about-area -->
+        <div class="wpo-about-area-s2 section-padding">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 col-md-12 col-sm-12">
+                        <div class="wpo-about-img">
+                            <img src="{% static 'web/assets/images/about.jpg' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-12 colsm-12">
+                        <div class="wpo-about-text">
+                            <div class="wpo-about-title">
+                                <span>About Us</span>
+                                <h2>Welcome to ASM DECOR</h2>
+                            </div>
+                            <p>At ASM DECOR, we are the leaders in interior design and contracting, with a legacy dating back to 1988. Our passion for design, dedication to quality, and commitment to our clients have made us a trusted partner in the industry. From turnkey projects to crafting bespoke interior design elements, we bring your vision to life.</p>
+                            <div class="btns">
+                                <a href="{% url "web:about" %}" class="theme-btn" tabindex="0">Discover More</a>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of wpo-about-area -->
+
+        <!-- start wpo-service-section -->
+        <section class="wpo-service-section-s2">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-12">
+                        <div class="wpo-section-title">
+                            <span>WHY CHOOSE US?</span>
+                            <h2>Get All Facilities In One Station</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="scervice-wrap">
+                    <div class="wpo-service-slider owl-carousel">
+                        {% for cat in servicescategories %}
+                        <div class="grid">
+                            <div class="scervice-item item-height">
+                                <div class="scervice-item-img">
+                                    <img src="{{cat.icon.url}}" alt="">
+                                </div>
+                                <div class="scervice-item-text">
+                                    <a href="{% url "web:service-single" cat.slug %}">
+                                        <h2>{{cat.name}}</h2>
+                                    </a>
+                                    <p>{{cat.description|truncatechars:50}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end wpo-service-section -->
+
+        <!-- start wpo-cta-section -->
+        <section class="wpo-cta-section">
+            <div class="container">
+                <div class="cta-wrapper">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-7 col-12">
+                            <div class="cta-left">
+                                <h2>Make your dream property.</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-5 col-12">
+                            <div class="cta-right">
+                                <a href="about.html" class="theme-btn">GET IN TOUCH</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end wpo-cta-section -->
+
+
+        <!-- start wpo-fun-fact-section -->
+        <section class="wpo-fun-fact-section section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-xs-12">
+                        <div class="wpo-fun-fact-grids clearfix">
+                            <div class="grid">
+                                <div class="info">
+                                    <h3><span class="odometer" data-count="25">00</span></h3>
+                                    <p>Years Of Experience</p>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="info">
+                                    <h3><span class="odometer" data-count="32">00</span></h3>
+                                    <p>Expert Specialist</p>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="info">
+                                    <h3><span class="odometer" data-count="321">00</span>+</h3>
+                                    <p>Successful Project</p>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="info">
+                                    <h3><span class="odometer" data-count="785">00</span>+</h3>
+                                    <p>Happy Customers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </section>
+        <!-- end wpo-fun-fact-section -->
+
+        <!-- start wpo-testimonial-section -->
+        <div class="wpo-testimonial-section-s2 section-padding">
+            <div class="container">
+                <div class="testimonial-wrapper">
+                    <div class="row">
+                        <div class="col-lg-6 col-12">
+                            <div class="testimonial-slider">
+                                <div class="testimonial-text">
+                                    <img src="{% static 'web/assets/images/ft-icon/5.png' %}" alt="">
+                                    <p>ASM DECOR exceeded my expectations in every way. Their attention to detail and craftsmanship is unparalleled. They transformed my space into a work of art.</p>
+                                    <h3>Tanneis Akrasenko</h3>
+                                    <span>Business Man</span>
+                                </div>
+                                <div class="testimonial-text">
+                                    <img src="{% static 'web/assets/images/ft-icon/5.png' %}" alt="">
+                                    <p>I couldn't be happier with the results. ASM DECOR took my vision and turned it into a stunning reality.</p>
+                                    <h3>Funky Dos</h3>
+                                    <span>Business Man</span>
+                                </div>
+                                <div class="testimonial-text">
+                                    <img src="{% static 'web/assets/images/ft-icon/5.png' %}" alt="">
+                                    <p>Working with ASM DECOR was a seamless experience. They provided complete solutions and delivered on time and within budget. I highly recommend them for any interior project.</p>
+                                    <h3>RockinIt</h3>
+                                    <span>Business Man</span>
+                                </div>
+                                <div class="testimonial-text">
+                                    <img src="{% static 'web/assets/images/ft-icon/5.png' %}" alt="">
+                                    <p>ASM DECOR's customized furniture added a touch of luxury to our office space. It's not just furniture; it's a statement of our brand. Their team's dedication to quality is exceptional.</p>
+                                    <h3>David Gray</h3>
+                                    <span>Business Man</span>
+                                </div>
+                                <div class="testimonial-text">
+                                    <img src="{% static 'web/assets/images/ft-icon/5.png' %}" alt="">
+                                    <p>ASM DECOR's master craftsmanship is truly outstanding. Their finishing carpenters and painters transformed our retail space into a masterpiece. The results speak for themselves.</p>
+                                    <h3>Tanneis Akrasenko</h3>
+                                    <span>Business Man</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="testimonial-img">
+                                <img src="{% static 'web/assets/images/testimonial.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end wpo-testimonial-section -->
+
+        <!-- wpo-partners-area-start -->
+        <section class="wpo-partners-section  section-padding">
+            <h2 class="hidden">partner</h2>
+            <div class="wpo-section-title">
+                <h2>Our Partner</h2>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col col-xs-12">
+                        <div class="partner-grids partners-slider owl-carousel clearfix">
+                            <div class="grid">
+                                <img src="{% static 'web/assets/images/partners/1.png' %}" alt="">
+                            </div>
+                            <div class="grid">
+                                <img src="{% static 'web/assets/images/partners/2.png' %}" alt="">
+                            </div>
+                            <div class="grid">
+                                <img src="{% static 'web/assets/images/partners/3.png' %}" alt="">
+                            </div>
+                            <div class="grid">
+                                <img src="{% static 'web/assets/images/partners/4.png' %}" alt="">
+                            </div>
+                            <div class="grid">
+                                <img src="{% static 'web/assets/images/partners/5.png' %}" alt="">
+                            </div>
+                            <div class="grid">
+                                <img src="{% static 'web/assets/images/partners/6.png' %}" alt="">
+                            </div>
+                            <div class="grid">
+                                <img src="{% static 'web/assets/images/partners/7.png' %}" alt="">
+                            </div> <div class="grid">
+                                <img src="{% static 'web/assets/images/partners/8.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end contianer -->
+        </section>
+        <!-- partners-area-end -->
+
+        <!-- start wpo-blog-section -->
+        <section class="wpo-blog-section section-padding">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="wpo-section-title">
+                            <span>OUR LATEST NEWS</span>
+                            <h2>Most Popular Post & Articles</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-wrapper">
+                    <div class="row wpo-blog-slider owl-carousel">
+                        <div class="blog-single">
+                            <div class="images">
+                                <img src="{% static 'web/assets/images/blog/img-1.jpg' %}" alt="">
+                                <div class="date">
+                                    <h3>28</h3>
+                                    <span>MAR</span>
+                                </div>
+                            </div>
+                            <div class="text">
+                                <span>ARCHITECTURE / BY: KARIANAS</span>
+                                <h2>Lorem Ipsum is simply dummy
+                                    text of printing and typesetting.</h2>
+                                <a href="blog-single.html">READ MORE</a>
+                            </div>
+                        </div>
+                        <div class="blog-single">
+                            <div class="images">
+                                <img src="{% static 'web/assets/images/blog/img-2.jpg' %}" alt="">
+                                <div class="date">
+                                    <h3>29</h3>
+                                    <span>MAR</span>
+                                </div>
+                            </div>
+                            <div class="text">
+                                <span>ARCHITECTURE / BY: Dos</span>
+                                <h2>Lorem Ipsum is simply dummy
+                                    text of printing and typesetting.</h2>
+                                <a href="blog-single.html">READ MORE</a>
+                            </div>
+                        </div>
+                        <div class="blog-single">
+                            <div class="images">
+                                <img src="{% static 'web/assets/images/blog/img-3.jpg' %}" alt="">
+                                <div class="date">
+                                    <h3>30</h3>
+                                    <span>MAR</span>
+                                </div>
+                            </div>
+                            <div class="text">
+                                <span>ARCHITECTURE / BY: Jon</span>
+                                <h2>Lorem Ipsum is simply dummy
+                                    text of printing and typesetting.</h2>
+                                <a href="blog-single.html">READ MORE</a>
+                            </div>
+                        </div>
+                        <div class="blog-single">
+                            <div class="images">
+                                <img src="{% static 'web/assets/images/blog/img-3.jpg' %}" alt="">
+                                <div class="date">
+                                    <h3>30</h3>
+                                    <span>MAR</span>
+                                </div>
+                            </div>
+                            <div class="text">
+                                <span>ARCHITECTURE / BY: Jon</span>
+                                <h2>Lorem Ipsum is simply dummy
+                                    text of printing and typesetting.</h2>
+                                <a href="blog-single.html">READ MORE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end wpo-blog-section -->
+
+{% endblock %}

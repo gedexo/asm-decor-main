@@ -1,0 +1,28 @@
+.wpo-blog-section .blog-wrapper .blog-single .text.services{
+    padding: 40px 40px 50px;
+    background-color: #ffffff;
+    
+}
+
+.wpo-blog-section .blog-wrapper .blog-single:hover .text.services {
+    background: #EC1616;
+    margin-top: 10px;
+    padding: 40px 40px 50px;
+    border: 1px solid transparent;
+    border-top: 0;
+}
+
+.services-single-row{
+    --bs-gutter-y: 25px;
+}
+
+.gutter-y{
+    --bs-gutter-y: 1.5rem;
+}
+.item-height{
+    height: 100%;
+}
+
+.career-form{
+    margin-bottom:50px !important;
+}

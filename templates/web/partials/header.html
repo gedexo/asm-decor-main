@@ -1,0 +1,45 @@
+  {% load static %}
+  <!-- start header -->
+        <header id="header">
+            <div class="wpo-site-header">
+                <nav class="navigation navbar navbar-expand-lg navbar-light">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-1 col-md-2 col-3 d-lg-none dl-block">
+                                <div class="mobail-menu">
+                                    <button type="button" class="navbar-toggler open-btn">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar first-angle"></span>
+                                        <span class="icon-bar middle-angle"></span>
+                                        <span class="icon-bar last-angle"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-5 col-6">
+                                <div class="navbar-header">
+                                    <a class="navbar-brand" href="{% url "web:index" %}"><img src="{% static 'web/assets/images/logo.jpg' %}"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-md-1 col-1">
+                                <div id="navbar" class="collapse navbar-collapse navigation-holder">
+                                    <button class="menu-close"><i class="ti-close"></i></button>
+                                    <ul class="nav navbar-nav mb-2 mb-lg-0">
+                                        <li><a class="active" href="{% url "web:index" %}">Home</a></li>
+                                        <li><a class="" href="{% url "web:about" %}">About</a></li>
+                                        <li><a class="" href="{% url "web:project" %}">Project</a></li>
+                                        <li><a class="" href="{% url "web:service" %}">Service</a></li>
+                                        <li><a class="" href="{% url "web:update" %}">Update</a></li>
+                                        <li><a class="" href="{% url "web:career" %}">Career</a></li>
+                                        <li><a href="{% url "web:contact" %}">Contact</a></li>
+                                    </ul>
+
+                                </div><!-- end of nav-collapse -->
+                            </div>
+                           
+                        </div>
+                    </div><!-- end of container -->
+                </nav>
+            </div>
+        </header>
+        <!-- end of header -->
