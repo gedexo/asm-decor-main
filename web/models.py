@@ -45,3 +45,15 @@ class ServiceEnquiry(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+class Update(models.Model):
+    title = models.CharField(max_length=100)
+    author = models.CharField(max_length=100)
+    image = models.ImageField()
+    description = models.TextField()
+    date=models.DateField()
+    slug = models.SlugField(unique=True, max_length=100)
+
+    def __str__(self):
+        return self.title

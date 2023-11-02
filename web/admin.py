@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Service,ServiceCategory,Contact,ServiceEnquiry
+from .models import Service,ServiceCategory,Contact,ServiceEnquiry,Update
 
 
 
@@ -21,3 +21,7 @@ class ContactAdmin(admin.ModelAdmin):
 @admin.register(ServiceEnquiry)
 class ServiceEnquiryAdmin(admin.ModelAdmin):
     list_display = ("name",)
+
+@admin.register(Update)
+class UpdateAdmin(admin.ModelAdmin):
+    list_display = ("title",)
