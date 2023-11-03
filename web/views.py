@@ -6,10 +6,9 @@ from django.shortcuts import redirect
 from django.contrib import messages
 
 from django.views.generic import ListView, DetailView, TemplateView
-from django.views.generic.edit import FormView, CreateView, UpdateView, DeleteView
-
-from .models import ServiceCategory,Service
-from .forms import ContactForm,ServiceEnquiryForm
+from django.views.generic.edit import FormView
+from .models import ServiceCategory,Service,Update,Project
+from .forms import ContactForm,ServiceEnquiryForm,CareerForm
 
 # Create your views here.
 
@@ -19,48 +18,63 @@ class IndexView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["servicescategories"] = ServiceCategory.objects.all()
+        context["updates"] = Update.objects.all()
+        context['is_index'] = True
         return context
     
 
 class AboutView(TemplateView):
     template_name = "web/about.html"
-    
-
-class ContactView(FormView):
-    template_name = "web/contact.html"
-    form_class = ContactForm
-
-    def form_valid(self, form):
-        form.save()
-        response_data = {"message": "Your message has been submitted successfully!"}
-        return JsonResponse(response_data)
-
-    def form_invalid(self, form):
-        response_data = {"error": "Invalid form submission"}
-        return JsonResponse(response_data, status=400)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["is_contact"] = True
+        context["is_about"] = True
+        return context
+    
+    
+
+
+
+
+class ProjectListView(ListView):
+    model = Project
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["is_project"] = True
         return context
 
-class ProjectView(TemplateView):
-    template_name = "web/project.html"
+
+
+class UpdatesListView(ListView):
+    model = Update
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["is_update"] = True
+        return context
+
+
+class UpdateDetailView(DetailView):
+    model = Update
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["is_update"] = True
+        return context
 
 
 
-class UpdateView(TemplateView):
-    template_name = "web/update.html"
-
-
-
-class CareerView(TemplateView):
-    template_name = "web/career.html"
 
 
 class ServiceCategoryListView(ListView):
     model = ServiceCategory
     context_object_name="servicescategories"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["is_service"] = True
+        return context
 
 
 class ServiceSingleView(TemplateView):
@@ -72,6 +86,11 @@ class ServiceSingleView(TemplateView):
         category = get_object_or_404(ServiceCategory, slug=category_slug)
         context["services"] = Service.objects.filter(category=category)
 
+        return context
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["is_service"] = True
         return context
 
 
@@ -101,3 +120,49 @@ class ServiceDetailView(DetailView,FormView):
     def form_invalid(self, form):
         response_data = {"error": "Invalid form submission"}
         return JsonResponse(response_data, status=400)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["is_service"] = True
+        return context
+    
+
+class ContactView(FormView):
+    template_name = "web/contact.html"
+    form_class = ContactForm
+
+    def form_valid(self, form):
+        form.save()
+        response_data = {"message": "Your message has been submitted successfully!"}
+        return JsonResponse(response_data)
+
+    def form_invalid(self, form):
+        response_data = {"error": "Invalid form submission"}
+        return JsonResponse(response_data, status=400)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["is_contact"] = True
+        return context
+    
+
+class CareerView(FormView):
+    template_name = "web/career.html"
+    form_class=CareerForm
+
+    def form_valid(self, form):
+        form.save()
+        response_data = { "status": "true","title": "Successfully Submitted","message": "Message successfully updated",}
+        return JsonResponse(response_data)
+
+    def form_invalid(self, form):
+        response_data = {"status": "false","title": "Form validation error",}
+        return JsonResponse(response_data, status=400)
+    
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["is_career"] = True
+        return context
+    
+

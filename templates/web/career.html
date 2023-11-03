@@ -32,43 +32,31 @@
                             
                         </div>
                         <div class="wpo-contact-form-area career-form">
-                            <form method="post" class="contact-validation-active" id="contact-form-main">
+                            <form method="post" class="contact-validation-active ajax reaload" id="contact-form-main" enctype="multipart/form-data">
+                                {% csrf_token %}
                                 <div>
-                                    <input type="text" class="form-control" name="name" id="name"
-                                        placeholder="Your Name*">
+                                    {{form.name}}
                                 </div>
                                 <div>
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Your Email*">
+                                    {{form.phone}}
                                 </div>
                                 <div>
-                                    <input type="text" class="form-control" name="adress" id="adress"
-                                        placeholder="Adress">
+                                    {{form.email}}
                                 </div>
                                 <div>
-                                    <select name="service" class="form-control">
-                                        <option disabled="disabled" selected="">Services</option>
-                                        <option>Architecture</option>
-                                        <option>The Rehearsal Dinner</option>
-                                        <option>The Afterparty</option>
-                                        <option>Videographers</option>
-                                        <option>Perfect Cake</option>
-                                        <option>All Of The Above</option>
-                                    </select>
+                                    {{form.address}}
                                 </div>
                                 <div class="fullwidth">
-                                    <textarea class="form-control" name="note" id="note"
-                                        placeholder="Message..."></textarea>
+                                    {{form.message}}
+                                </div>
+                                <div class="fullwidth">
+                                    {{form.cv}}
                                 </div>
                                 <div class="submit-area">
                                     <button type="submit" class="theme-btn">Get in Touch</button>
                                     <div id="loader">
                                         <i class="ti-reload"></i>
                                     </div>
-                                </div>
-                                <div class="clearfix error-handling-messages">
-                                    <div id="success">Thank you</div>
-                                    <div id="error"> Error occurred while sending email. Please try again later. </div>
                                 </div>
                             </form>
                         </div>
@@ -78,4 +66,9 @@
         </section>
         <!-- end wpo-contact-pg-section -->
 
+        
 {% endblock %}
+{% block js %}
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.15.3/dist/sweetalert2.all.min.js"></script>
+        <script src="{% static 'web/assets/js/career.js' %}"></script>
+{% endblock  %}  

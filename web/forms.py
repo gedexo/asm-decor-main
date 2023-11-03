@@ -1,5 +1,5 @@
 from django import forms
-from .models import Contact,ServiceEnquiry
+from .models import Contact,ServiceEnquiry,Career
 
 class ContactForm(forms.ModelForm):
     class Meta:
@@ -23,4 +23,18 @@ class ServiceEnquiryForm(forms.ModelForm):
             "name": forms.TextInput(attrs={"placeholder": "Your Name..."}),
             "email": forms.EmailInput(attrs={"placeholder": "Email..."}),
             "phone": forms.TextInput(attrs={"placeholder": "Phone..."}),
+        }
+
+
+class CareerForm(forms.ModelForm):
+    class Meta:
+        model = Career
+        fields = "__all__"
+        widgets = {
+            "name": forms.TextInput(attrs={"placeholder": "Your Name...", "class": "form-control"}),
+            "address": forms.TextInput(attrs={"placeholder": "Your Address...", "class": "form-control"}),
+            "email": forms.EmailInput(attrs={"placeholder": "Email...", "class": "form-control"}),
+            "phone": forms.TextInput(attrs={"placeholder": "Phone Number...", "class": "form-control"}),
+            "message": forms.Textarea(attrs={"placeholder": "Message..." , "class": "fullwidth"}),
+            'cv': forms.FileInput(attrs={"class": "form-control"})
         }

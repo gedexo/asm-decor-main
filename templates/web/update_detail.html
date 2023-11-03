@@ -1,0 +1,61 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+
+
+        <!-- start wpo-page-title -->
+        <section class="wpo-page-title">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-xs-12">
+                        <div class="wpo-breadcumb-wrap">
+                            <h2>Blog Single</h2>
+                            <ol class="wpo-breadcumb-wrap">
+                                <li><a href="index-2.html">Home</a></li>
+                                <li>Blog Single</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div> <!-- end row -->
+            </div> <!-- end container -->
+        </section>
+        <!-- end page-title -->
+
+        <!-- start wpo-blog-single-section -->
+        <section class="wpo-blog-single-section wpo-blog-single-left-sidebar-section section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-lg-10 col-12 offset-lg-1">
+                        <div class="wpo-blog-content">
+                            <div class="post format-standard-image">
+                                <div class="entry-media">
+                                    <img src="{{update.image.url}}" alt>
+                                </div>
+                                <div class="entry-meta">
+                                    <ul>
+                                        <li><i class="fi flaticon-user"></i> By <a href="#">{{update.author}}</a> </li>
+                                        <li><i class="fi flaticon-calendar"></i> {{update.date|date:"d M, Y"}}</li>
+                                    </ul>
+                                </div>
+                                <h2>{{update.title}}</h2>
+                                    <div>{{update.description|safe}}</div>                                                   
+
+                                <div class="gallery">
+                                    <div>
+                                        <img src="assets/images/blog-details/1.jpg" alt="">
+                                    </div>
+                                    <div>
+                                        <img src="assets/images/blog-details/2.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end container -->
+        </section>
+        <!-- end wpo-blog-single-section -->
+
+{% endblock %}

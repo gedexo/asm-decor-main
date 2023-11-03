@@ -24,5 +24,18 @@
 }
 
 .career-form{
-    margin-bottom:50px !important;
+    margin-bottom:120px !important;
+    padding-bottom: 20px;
+}
+
+
+
+
+@media (min-width: 991px) {
+    .pad-tp{
+        padding-top: 50px;
+    }
+    .pad-bt{
+        padding-bottom: 50px;
+    }
 }

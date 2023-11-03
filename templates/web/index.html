@@ -144,7 +144,7 @@
 
 
         <!-- start wpo-fun-fact-section -->
-        <section class="wpo-fun-fact-section section-padding">
+        <section class="wpo-fun-fact-section section-padding  pad-bt">
             <div class="container">
                 <div class="row">
                     <div class="col col-xs-12">
@@ -182,7 +182,7 @@
         <!-- end wpo-fun-fact-section -->
 
         <!-- start wpo-testimonial-section -->
-        <div class="wpo-testimonial-section-s2 section-padding">
+        <div class="wpo-testimonial-section-s2 section-padding pad-tp">
             <div class="container">
                 <div class="testimonial-wrapper">
                     <div class="row">
@@ -285,66 +285,18 @@
                 </div>
                 <div class="blog-wrapper">
                     <div class="row wpo-blog-slider owl-carousel">
+                        {% for update in updates %}
                         <div class="blog-single">
                             <div class="images">
                                 <img src="{% static 'web/assets/images/blog/img-1.jpg' %}" alt="">
-                                <div class="date">
-                                    <h3>28</h3>
-                                    <span>MAR</span>
-                                </div>
                             </div>
                             <div class="text">
-                                <span>ARCHITECTURE / BY: KARIANAS</span>
-                                <h2>Lorem Ipsum is simply dummy
-                                    text of printing and typesetting.</h2>
-                                <a href="blog-single.html">READ MORE</a>
+                                <span>{{update.date}}</span>
+                                <h2>{{update.title}}</h2>
+                                <a href="{% url 'web:update-detail' update.slug %}">READ MORE</a>
                             </div>
                         </div>
-                        <div class="blog-single">
-                            <div class="images">
-                                <img src="{% static 'web/assets/images/blog/img-2.jpg' %}" alt="">
-                                <div class="date">
-                                    <h3>29</h3>
-                                    <span>MAR</span>
-                                </div>
-                            </div>
-                            <div class="text">
-                                <span>ARCHITECTURE / BY: Dos</span>
-                                <h2>Lorem Ipsum is simply dummy
-                                    text of printing and typesetting.</h2>
-                                <a href="blog-single.html">READ MORE</a>
-                            </div>
-                        </div>
-                        <div class="blog-single">
-                            <div class="images">
-                                <img src="{% static 'web/assets/images/blog/img-3.jpg' %}" alt="">
-                                <div class="date">
-                                    <h3>30</h3>
-                                    <span>MAR</span>
-                                </div>
-                            </div>
-                            <div class="text">
-                                <span>ARCHITECTURE / BY: Jon</span>
-                                <h2>Lorem Ipsum is simply dummy
-                                    text of printing and typesetting.</h2>
-                                <a href="blog-single.html">READ MORE</a>
-                            </div>
-                        </div>
-                        <div class="blog-single">
-                            <div class="images">
-                                <img src="{% static 'web/assets/images/blog/img-3.jpg' %}" alt="">
-                                <div class="date">
-                                    <h3>30</h3>
-                                    <span>MAR</span>
-                                </div>
-                            </div>
-                            <div class="text">
-                                <span>ARCHITECTURE / BY: Jon</span>
-                                <h2>Lorem Ipsum is simply dummy
-                                    text of printing and typesetting.</h2>
-                                <a href="blog-single.html">READ MORE</a>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

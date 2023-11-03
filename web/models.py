@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from tinymce.models import HTMLField
 # Create your models here.
 
 
@@ -17,8 +18,8 @@ class ServiceCategory(models.Model):
 class Service (models.Model):
     category=models.ForeignKey("web.ServiceCategory",on_delete=models.CASCADE)
     title=models.CharField(max_length=30)
-    image=models.ImageField()
-    description=models.TextField()
+    image=models.ImageField(upload_to='service')
+    description=HTMLField()
     slug = models.SlugField(unique=True, max_length=100, blank=True, null=True)
 
     def __str__(self):
@@ -50,10 +51,33 @@ class ServiceEnquiry(models.Model):
 class Update(models.Model):
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=100)
-    image = models.ImageField()
-    description = models.TextField()
+    image = models.ImageField(upload_to='update')
     date=models.DateField()
+    description = HTMLField()
     slug = models.SlugField(unique=True, max_length=100)
 
     def __str__(self):
         return self.title
+    
+
+class Career(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone = models.CharField(max_length=100)
+    address = models.CharField(max_length=100)
+    message = models.TextField()
+    cv = models.FileField(upload_to='career')
+
+
+    def __str__(self):
+        return self.name
+    
+
+
+class Project(models.Model):
+    image=models.ImageField(upload_to="project")
+    title=models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.title
+    

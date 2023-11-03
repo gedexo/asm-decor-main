@@ -1,0 +1,61 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+        <!-- start wpo-page-title -->
+        <section class="wpo-page-title">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-xs-12">
+                        <div class="wpo-breadcumb-wrap">
+                            <h2>About us</h2>
+                            <ol class="wpo-breadcumb-wrap">
+                                <li><a href="index-2.html">Home</a></li>
+                                <li>About</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div> <!-- end row -->
+            </div> <!-- end container -->
+        </section>
+        <!-- end page-title -->
+
+    <!-- start wpo-blog-section -->
+
+    <section class="wpo-blog-section section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="wpo-section-title">
+                        <span>OUR LATEST NEWS</span>
+                        <h2>Most Popular Post & Articles</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-wrapper">
+                <div class="row wpo-blog gutter-y">
+                    {% for update in update_list %}
+                    <div class="blog-single  col-lg-4 col-md-6 col-12">
+                        <div class="images">
+                            <img src="{{update.image.url}}" alt="">
+                        </div>
+                        <div class="text services">
+                            <span>{{update.date}}</span>
+                            <h2>{{update.title}}</h2>
+                            <a href="{% url "web:update-detail" update.slug %}">READ MORE</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- end wpo-blog-section -->
+
+
+
+{% endblock  %}

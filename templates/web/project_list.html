@@ -1,0 +1,63 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+
+        <!-- start wpo-page-title -->
+        <section class="wpo-page-title">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-xs-12">
+                        <div class="wpo-breadcumb-wrap">
+                            <h2>Project</h2>
+                            <ol class="wpo-breadcumb-wrap">
+                                <li><a href="index-2.html">Home</a></li>
+                                <li>Project</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div> <!-- end row -->
+            </div> <!-- end container -->
+        </section>
+        <!-- end page-title -->
+
+        <!-- start wpo-service-section -->
+        <section class="wpo-service-section-s3 section-padding">
+            <div class="shape-1">
+                <img src="assets/images/scervice-shap-1.png" alt="">
+            </div>
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-12">
+                        <div class="wpo-section-title">
+                            <span>WHY CHOOSE US?</span>
+                            <h2>Get All Facilities In One Station</h2>
+                            <div class="shape-title">
+                                <img src="assets/images/section-title-shape.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="scervice-wrap">
+                    <div class="row gutter-y">
+
+                        {% for project in project_list %}
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="scervice-item">
+                                <div class="scervice-item-img">
+                                    <img src="{{project.image.url}}" alt="">
+                                    <div class="content">
+                                        <h2><a >{{project.title}}</a></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                     
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end wpo-service-section -->
+
+
+ {% endblock %}
