@@ -1,12 +1,13 @@
-        <!-- start of wpo-site-footer-section -->
+   {% load static %}
+   <!-- start of wpo-site-footer-section -->
         <footer class="wpo-site-footer">
             <div class="wpo-upper-footer">
                 <div class="container">
                     <div class="row">
-                        <div class="col col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12">
+                        <div class="col col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                             <div class="widget about-widget">
                                 <div class="logo widget-title">
-                                    <a class="logo" href="index-2.html"><img src="assets/images/logo-2.svg" alt=""></a>
+                                    <a class="logo" href="{% url "web:index" %}"><img src="{% static 'web/assets/images/logo.png' %}" alt=""></a>
                                 </div>
                                 <p>ASM DECOR - Transforming Spaces with Elegance and Expertise. Your Dream Interior Awaits</p>
                                 <ul>
@@ -33,13 +34,12 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col col-xl-3  col-lg-4 col-md-6 col-sm-12 col-12">
+                        <div class="col col-xl-4  col-lg-4 col-md-6 col-sm-12 col-12">
                             <div class="widget link-widget">
                                 <div class="widget-title">
                                     <h3>Quick Links</h3>
                                 </div>
                                 <ul>
-                                    <li><a href="{% url "web:index" %}">Home</a></li>
                                     <li><a href="{% url "web:about" %}">About</a></li>
                                     <li><a href="{% url "web:project" %}">Project</a></li>
                                     <li><a href="{% url "web:service" %}">Service</a></li>
@@ -49,7 +49,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col col-xl-3  col-lg-4 col-md-6 col-sm-12 col-12">
+                        <div class="col col-xl-4  col-lg-4 col-md-6 col-sm-12 col-12">
                             <div class="widget wpo-service-link-widget">
                                 <div class="widget-title">
                                     <h3>Contact </h3>
@@ -59,13 +59,13 @@
                                         <li><i class="fi flaticon-maps-and-flags"></i>P.o Box: 128241,
                                             Dubai- U.A.E </li>
                                         <li><i class="fi flaticon-phone-call"></i>+971 435 111 52</li>
-                                        <li><i class="fi flaticon-email"></i>avadh@gmail.com</li>
+                                        <li><i class="fi flaticon-email"></i>info@asmdecor.com</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col col-xl-3  col-lg-4 col-md-6 col-sm-12 col-12">
+                        {% comment %} <div class="col col-xl-3  col-lg-4 col-md-6 col-sm-12 col-12">
                             <div class="widget instagram">
                                 <div class="widget-title">
                                     <h3>Our Gellery</h3>
@@ -85,7 +85,7 @@
                                                 alt=""></a></li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> {% endcomment %}
                     </div>
                 </div> <!-- end container -->
             </div>

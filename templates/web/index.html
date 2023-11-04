@@ -88,33 +88,36 @@
         <!-- end of wpo-about-area -->
 
         <!-- start wpo-service-section -->
-        <section class="wpo-service-section-s2">
+        <section class="wpo-service-section ">
+            
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6 col-12">
                         <div class="wpo-section-title">
                             <span>WHY CHOOSE US?</span>
                             <h2>Get All Facilities In One Station</h2>
+                           
                         </div>
                     </div>
                 </div>
                 <div class="scervice-wrap">
-                    <div class="wpo-service-slider owl-carousel">
-                        {% for cat in servicescategories %}
-                        <div class="grid">
-                            <div class="scervice-item item-height">
+                    <div class="row gutter-y">
+                        {% for service in servicescategories|slice:":4" %}
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <a href="{% url "web:service-single" service.slug %}"><div class="scervice-item item-height">
                                 <div class="scervice-item-img">
-                                    <img src="{{cat.icon.url}}" alt="">
+                                    <img src="{{ service.icon.url }}" alt="">
                                 </div>
                                 <div class="scervice-item-text">
-                                    <a href="{% url "web:service-single" cat.slug %}">
-                                        <h2>{{cat.name}}</h2>
+                                    <a href="{% url "web:service-single" service.slug %}">
+                                        <h2>{{service.name}}</h2>
                                     </a>
-                                    <p>{{cat.description|truncatechars:50}}</p>
+                                    <p>{{service.description|truncatechars:50}}</p>
                                 </div>
-                            </div>
+                            </div></a>
                         </div>
                         {% endfor %}
+                        
                     </div>
                 </div>
             </div>
@@ -232,45 +235,7 @@
         </div>
         <!-- end wpo-testimonial-section -->
 
-        <!-- wpo-partners-area-start -->
-        <section class="wpo-partners-section  section-padding">
-            <h2 class="hidden">partner</h2>
-            <div class="wpo-section-title">
-                <h2>Our Partner</h2>
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col col-xs-12">
-                        <div class="partner-grids partners-slider owl-carousel clearfix">
-                            <div class="grid">
-                                <img src="{% static 'web/assets/images/partners/1.png' %}" alt="">
-                            </div>
-                            <div class="grid">
-                                <img src="{% static 'web/assets/images/partners/2.png' %}" alt="">
-                            </div>
-                            <div class="grid">
-                                <img src="{% static 'web/assets/images/partners/3.png' %}" alt="">
-                            </div>
-                            <div class="grid">
-                                <img src="{% static 'web/assets/images/partners/4.png' %}" alt="">
-                            </div>
-                            <div class="grid">
-                                <img src="{% static 'web/assets/images/partners/5.png' %}" alt="">
-                            </div>
-                            <div class="grid">
-                                <img src="{% static 'web/assets/images/partners/6.png' %}" alt="">
-                            </div>
-                            <div class="grid">
-                                <img src="{% static 'web/assets/images/partners/7.png' %}" alt="">
-                            </div> <div class="grid">
-                                <img src="{% static 'web/assets/images/partners/8.png' %}" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- end contianer -->
-        </section>
-        <!-- partners-area-end -->
+
 
         <!-- start wpo-blog-section -->
         <section class="wpo-blog-section section-padding">
@@ -302,5 +267,46 @@
             </div>
         </section>
         <!-- end wpo-blog-section -->
+
+
+                <!-- wpo-partners-area-start -->
+                <section class="wpo-partners-section  section-padding pad-tp">
+                    <h2 class="hidden">partner</h2>
+                    <div class="wpo-section-title">
+                        <h2>Our Partner</h2>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col col-xs-12">
+                                <div class="partner-grids partners-slider owl-carousel clearfix">
+                                    <div class="grid">
+                                        <img src="{% static 'web/assets/images/partners/1.png' %}" alt="">
+                                    </div>
+                                    <div class="grid">
+                                        <img src="{% static 'web/assets/images/partners/2.png' %}" alt="">
+                                    </div>
+                                    <div class="grid">
+                                        <img src="{% static 'web/assets/images/partners/3.png' %}" alt="">
+                                    </div>
+                                    <div class="grid">
+                                        <img src="{% static 'web/assets/images/partners/4.png' %}" alt="">
+                                    </div>
+                                    <div class="grid">
+                                        <img src="{% static 'web/assets/images/partners/5.png' %}" alt="">
+                                    </div>
+                                    <div class="grid">
+                                        <img src="{% static 'web/assets/images/partners/6.png' %}" alt="">
+                                    </div>
+                                    <div class="grid">
+                                        <img src="{% static 'web/assets/images/partners/7.png' %}" alt="">
+                                    </div> <div class="grid">
+                                        <img src="{% static 'web/assets/images/partners/8.png' %}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end contianer -->
+                </section>
+                <!-- partners-area-end -->
 
 {% endblock %}

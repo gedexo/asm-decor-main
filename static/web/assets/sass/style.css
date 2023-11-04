@@ -4307,7 +4307,7 @@ img {
   left: 0;
   z-index: -1;
 }
-.wpo-service-section .shape-1::before,
+/* .wpo-service-section .shape-1::before,
 .wpo-service-section-s2 .shape-1::before,
 .wpo-service-section-s3 .shape-1::before {
   width: 108px;
@@ -4321,7 +4321,7 @@ img {
   -webkit-animation: bounceTop 3s linear infinite;
           animation: bounceTop 3s linear infinite;
   border-radius: 49% 51% 67% 33%/48% 16% 84% 52%;
-}
+} */
 @media (max-width: 1199px) {
   .wpo-service-section .shape-1::before,
 .wpo-service-section-s2 .shape-1::before,

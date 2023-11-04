@@ -1,6 +1,6 @@
   {% load static %}
   <!-- start header -->
-        <header id="header">
+        <header id="header" class="wpo-header-style-1">
             <div class="wpo-site-header">
                 <nav class="navigation navbar navbar-expand-lg navbar-light">
                     <div class="container">
@@ -17,7 +17,7 @@
                             </div>
                             <div class="col-lg-3 col-md-5 col-6">
                                 <div class="navbar-header">
-                                    <a class="navbar-brand" href="{% url "web:index" %}"><img src="{% static 'web/assets/images/logo.jpg' %}"
+                                    <a class="navbar-brand" href="{% url "web:index" %}"><img src="{% static 'web/assets/images/logo.png' %}"
                                             alt=""></a>
                                 </div>
                             </div>
@@ -25,13 +25,13 @@
                                 <div id="navbar" class="collapse navbar-collapse navigation-holder">
                                     <button class="menu-close"><i class="ti-close"></i></button>
                                     <ul class="nav navbar-nav mb-2 mb-lg-0">
-                                        <li><a class="active" href="{% url "web:index" %}">Home</a></li>
-                                        <li><a class="" href="{% url "web:about" %}">About</a></li>
-                                        <li><a class="" href="{% url "web:project" %}">Project</a></li>
-                                        <li><a class="" href="{% url "web:service" %}">Service</a></li>
-                                        <li><a class="" href="{% url "web:update" %}">Update</a></li>
-                                        <li><a class="" href="{% url "web:career" %}">Career</a></li>
-                                        <li><a href="{% url "web:contact" %}">Contact</a></li>
+                                        <li><a class=" {% if is_index %}active{% endif %}" href="{% url "web:index" %}">Home</a></li>
+                                        <li><a class="{% if is_about %}active{% endif %}" href="{% url "web:about" %}">About</a></li>
+                                        <li><a class="{% if is_project %}active{% endif %}" href="{% url "web:project" %}">Project</a></li>
+                                        <li><a class="{% if is_service %}active{% endif %}" href="{% url "web:service" %}">Service</a></li>
+                                        <li><a class="{% if is_update %}active{% endif %}" href="{% url "web:update" %}">Update</a></li>
+                                        <li><a class="{% if is_career %}active{% endif %}" href="{% url "web:career" %}">Career</a></li>
+                                        <li><a class="{% if is_contact %}active{% endif %}" href="{% url "web:contact" %}">Contact</a></li>
                                     </ul>
 
                                 </div><!-- end of nav-collapse -->
@@ -43,3 +43,6 @@
             </div>
         </header>
         <!-- end of header -->
+
+
+

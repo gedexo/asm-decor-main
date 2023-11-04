@@ -9,10 +9,10 @@
                 <div class="row">
                     <div class="col col-xs-12">
                         <div class="wpo-breadcumb-wrap">
-                            <h2>Service Single</h2>
+                            <h2>{{category}}</h2>
                             <ol class="wpo-breadcumb-wrap">
-                                <li><a href="index-2.html">Home</a></li>
-                                <li>Service Single</li>
+                                <li><a href="{% url 'web:service' %}">Service</a></li>
+                                <li>{{category}}</li>
                             </ol>
                         </div>
                     </div>
@@ -27,8 +27,8 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         <div class="wpo-section-title">
-                            <span>OUR LATEST NEWS</span>
-                            <h2>Most Popular Post & Articles</h2>
+                            {% comment %} <span>OUR LATEST NEWS</span> {% endcomment %}
+                            <h2>Services</h2>
                         </div>
                     </div>
                 </div>

@@ -4,22 +4,22 @@
 
 
 
-        <!-- start wpo-page-title -->
+        {% comment %} <!-- start wpo-page-title -->
         <section class="wpo-page-title">
             <div class="container">
                 <div class="row">
                     <div class="col col-xs-12">
                         <div class="wpo-breadcumb-wrap">
-                            <h2>Service Single</h2>
+                            <h2>{{service.category}}</h2>
                             <ol class="wpo-breadcumb-wrap">
-                                <li><a href="index-2.html">Home</a></li>
-                                <li>Service Single</li>
+                                <li><a href="{% url 'web:service' %}">service</a></li>
+                                <li>{{service.category}}</li>
                             </ol>
                         </div>
                     </div>
                 </div> <!-- end row -->
             </div> <!-- end container -->
-        </section>
+        </section> {% endcomment %}
         <!-- end page-title -->
 
         <!-- wpo-service-single-area start -->
@@ -38,18 +38,7 @@
                                 <p>
                                     {{service.description|safe}}
                                 </p>
-                                <div class="row mt-4">
-                                    <div class="col-md-6 col-sm-6 col-12">
-                                        <div class="wpo-p-details-img">
-                                            <img src="assets/images/service-single/2.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6 col-12">
-                                        <div class="wpo-p-details-img">
-                                            <img src="assets/images/service-single/3.jpg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                            
                         </div>

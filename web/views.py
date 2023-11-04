@@ -65,8 +65,6 @@ class UpdateDetailView(DetailView):
 
 
 
-
-
 class ServiceCategoryListView(ListView):
     model = ServiceCategory
     context_object_name="servicescategories"
@@ -84,14 +82,12 @@ class ServiceSingleView(TemplateView):
         context = super().get_context_data(**kwargs)
         category_slug = self.kwargs['category_slug']
         category = get_object_or_404(ServiceCategory, slug=category_slug)
+        context["category"] = category
         context["services"] = Service.objects.filter(category=category)
+        context["is_service"] = True
 
         return context
     
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["is_service"] = True
-        return context
 
 
 class ServiceDetailView(DetailView,FormView):

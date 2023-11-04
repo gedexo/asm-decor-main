@@ -10,7 +10,7 @@ class ContactForm(forms.ModelForm):
             "address": forms.TextInput(attrs={"placeholder": "Your Address...", "class": "form-control"}),
             "email": forms.EmailInput(attrs={"placeholder": "Email...", "class": "form-control"}),
             "phone": forms.TextInput(attrs={"placeholder": "Phone Number...", "class": "form-control"}),
-            "message": forms.Textarea(attrs={"placeholder": "Message..." , "class": "fullwidth"}),
+            "message": forms.Textarea(attrs={"placeholder": "Message..." , "class": "form-control"}),
         }
 
 
@@ -35,6 +35,6 @@ class CareerForm(forms.ModelForm):
             "address": forms.TextInput(attrs={"placeholder": "Your Address...", "class": "form-control"}),
             "email": forms.EmailInput(attrs={"placeholder": "Email...", "class": "form-control"}),
             "phone": forms.TextInput(attrs={"placeholder": "Phone Number...", "class": "form-control"}),
-            "message": forms.Textarea(attrs={"placeholder": "Message..." , "class": "fullwidth"}),
+            "message": forms.Textarea(attrs={"placeholder": "Message..." , "class": "form-control"}),
             'cv': forms.FileInput(attrs={"class": "form-control"})
         }
