@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Service,ServiceCategory,Contact,ServiceEnquiry,Update,Career,Project
+from .models import Service,ServiceCategory,Contact,ServiceEnquiry,Update,Career,Project,Testimonial
 
 
 
@@ -36,3 +36,7 @@ class CareerAdmin(admin.ModelAdmin):
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     list_display=('title',)
+
+@admin.register(Testimonial)
+class TestimonialAdmin(admin.ModelAdmin):
+    list_display=('name','designation', 'review')

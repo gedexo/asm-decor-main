@@ -15,16 +15,15 @@ class ServiceCategory(models.Model):
         return self.name
     
 
-class Service (models.Model):
+class Service(models.Model):
     category=models.ForeignKey("web.ServiceCategory",on_delete=models.CASCADE)
-    title=models.CharField(max_length=30)
+    title=models.CharField(max_length=300)
     image=models.ImageField(upload_to='service')
     description=HTMLField()
     slug = models.SlugField(unique=True, max_length=100, blank=True, null=True)
 
     def __str__(self):
         return str(self.title)
-
 
 
 class Contact(models.Model):
@@ -73,11 +72,18 @@ class Career(models.Model):
         return self.name
     
 
-
 class Project(models.Model):
-    image=models.ImageField(upload_to="project")
-    title=models.CharField(max_length=100)
+    image = models.ImageField(upload_to="project")
+    title = models.CharField(max_length=100)
 
     def __str__(self):
         return self.title
     
+
+class Testimonial(models.Model):
+    name = models.CharField(max_length=50)
+    designation = models.CharField(max_length=50)
+    review = models.TextField()
+
+    def __str__(self):
+        return self.name

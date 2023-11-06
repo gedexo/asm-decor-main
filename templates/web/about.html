@@ -12,7 +12,7 @@
                         <div class="wpo-breadcumb-wrap">
                             <h2>About us</h2>
                             <ol class="wpo-breadcumb-wrap">
-                                <li><a href="index-2.html">Home</a></li>
+                                <li><a href="{% url "web:index" %}">Home</a></li>
                                 <li>About</li>
                             </ol>
                         </div>
@@ -59,64 +59,23 @@
                     </div>
                 </div>
                 <div class="scervice-wrap">
-                    <div class="row">
+                    <div class="row gutter-y">
+                        {% for service in servicescategories|slice:":4" %}
                         <div class="col-lg-3 col-md-6 col-12">
-                            <div class="scervice-item">
+                            <a href="{% url "web:service-single" service.slug %}"><div class="scervice-item item-height">
                                 <div class="scervice-item-img">
-                                    <img src="{% static 'web/assets/images/services/icon-1.png' %}" alt="">
+                                    <img src="{{ service.icon.url }}" alt="">
                                 </div>
                                 <div class="scervice-item-text">
-                                    <a href="service-single.html">
-                                        <h2>Floor Plans</h2>
+                                    <a href="{% url "web:service-single" service.slug %}">
+                                        <h2>{{service.name}}</h2>
                                     </a>
-                                    <p>It seem that only fragmen
-                                        the original remain.</p>
+                                    <p>{{service.description|truncatechars:50}}</p>
                                 </div>
-                            </div>
+                            </div></a>
                         </div>
-                        <div class="col-lg-3 col-md-6 col-12">
-                            <div class="scervice-item">
-                                <div class="scervice-item-img">
-                                    <img src="{% static 'web/assets/images/services/icon-2.png' %}" alt="">
-                                </div>
-                                <div class="scervice-item-text">
-                                    <a href="service-single.html">
-                                        <h2>FURNITURE</h2>
-                                    </a>
-                                    <p>It seem that only fragmen
-                                        the original remain.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-12">
-                            <div class="scervice-item">
-                                <div class="scervice-item-img">
-                                    <img src="{% static 'web/assets/images/services/icon-3.png' %}" alt="">
-                                </div>
-                                <div class="scervice-item-text">
-                                     <a href="service-single.html">
-                                        <h2>PLANNING</h2>
-                                    </a>
-                                    </a>
-                                    <p>It seem that only fragmen
-                                        the original remain.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-12">
-                            <div class="scervice-item">
-                                <div class="scervice-item-img">
-                                    <img src="{% static 'web/assets/images/services/icon-4.png' %}" alt="">
-                                </div>
-                                <div class="scervice-item-text">
-                                    <a href="service-single.html">
-                                        <h2>Decor Plan</h2>
-                                    </a>
-                                    <p>It seem that only fragmen
-                                        the original remain.</p>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
+                        
                     </div>
                 </div>
             </div>

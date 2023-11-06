@@ -1,9 +1,13 @@
 .wpo-blog-section .blog-wrapper .blog-single .text.services{
-    padding: 40px 40px 50px;
+    padding: 20px 30px 35px;
+    /* height: 50%; */
     background-color: #ffffff;
     
 }
 
+.wpo-service-single-main-img img{
+    width:100%;
+}
 .wpo-blog-section .blog-wrapper .blog-single:hover .text.services {
     background: #EC1616;
     margin-top: 10px;

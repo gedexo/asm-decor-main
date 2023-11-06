@@ -12,17 +12,14 @@
                             <div class="container">
                                 <div class="slide-content">
                                     <div data-swiper-parallax="300" class="slide-title">
-                                        <h2>Make your
-                                            statement
-                                            in style</h2>
+                                        <h2>Elevate Your Space with Stunning Interior Design</h2>
                                     </div>
                                     <div data-swiper-parallax="400" class="slide-text">
-                                        <p>Lorem ipsum dolor sit amet sed, adipiscing elit, sed do eiusmod tempor
-                                            incididunt ut labore et dolore magna aliqua ut enim ad.</p>
+                                        <p>Promise of transformation and beauty. Our expertise combines form and function, turning your vision into reality.</p>
                                     </div>
                                     <div class="clearfix"></div>
                                     <div data-swiper-parallax="500" class="slide-btns">
-                                        <a href="about.html" class="theme-btn">Explore more</a>
+                                        <a href="{% url "web:service" %}" class="theme-btn">Explore more</a>
                                     </div>
                                 </div>
                             </div>
@@ -35,15 +32,14 @@
                             <div class="container">
                                 <div class="slide-content">
                                     <div data-swiper-parallax="300" class="slide-title">
-                                        <h2>Simplicity wins over complexity</h2>
+                                        <h2>Bringing Your Dream to Life with Impeccable Design</h2>
                                     </div>
                                     <div data-swiper-parallax="400" class="slide-text">
-                                        <p>Lorem ipsum dolor sit amet sed, adipiscing elit, sed do eiusmod tempor
-                                            incididunt ut labore et dolore magna aliqua ut enim ad..</p>
+                                        <p>Explore unique, timeless designs that make every corner of your space a work of art.</p>
                                     </div>
                                     <div class="clearfix"></div>
                                     <div data-swiper-parallax="500" class="slide-btns">
-                                        <a href="about.html" class="theme-btn">Explore more</a>
+                                        <a href="{% url "web:service" %}" class="theme-btn">Explore more</a>
                                     </div>
                                 </div>
                             </div>
@@ -136,7 +132,7 @@
                         </div>
                         <div class="col-lg-6 col-md-5 col-12">
                             <div class="cta-right">
-                                <a href="about.html" class="theme-btn">GET IN TOUCH</a>
+                                <a href="{% url "web:contact" %}" class="theme-btn">GET IN TOUCH</a>
                             </div>
                         </div>
                     </div>
@@ -191,36 +187,14 @@
                     <div class="row">
                         <div class="col-lg-6 col-12">
                             <div class="testimonial-slider">
+                                {% for testimonial in testimonials %}
                                 <div class="testimonial-text">
                                     <img src="{% static 'web/assets/images/ft-icon/5.png' %}" alt="">
-                                    <p>ASM DECOR exceeded my expectations in every way. Their attention to detail and craftsmanship is unparalleled. They transformed my space into a work of art.</p>
-                                    <h3>Tanneis Akrasenko</h3>
-                                    <span>Business Man</span>
+                                    <p>{{testimonial.review}}</p>
+                                    <h3>{{testimonial.name}}</h3>
+                                    <span>{{testimonial.designation}}</span>
                                 </div>
-                                <div class="testimonial-text">
-                                    <img src="{% static 'web/assets/images/ft-icon/5.png' %}" alt="">
-                                    <p>I couldn't be happier with the results. ASM DECOR took my vision and turned it into a stunning reality.</p>
-                                    <h3>Funky Dos</h3>
-                                    <span>Business Man</span>
-                                </div>
-                                <div class="testimonial-text">
-                                    <img src="{% static 'web/assets/images/ft-icon/5.png' %}" alt="">
-                                    <p>Working with ASM DECOR was a seamless experience. They provided complete solutions and delivered on time and within budget. I highly recommend them for any interior project.</p>
-                                    <h3>RockinIt</h3>
-                                    <span>Business Man</span>
-                                </div>
-                                <div class="testimonial-text">
-                                    <img src="{% static 'web/assets/images/ft-icon/5.png' %}" alt="">
-                                    <p>ASM DECOR's customized furniture added a touch of luxury to our office space. It's not just furniture; it's a statement of our brand. Their team's dedication to quality is exceptional.</p>
-                                    <h3>David Gray</h3>
-                                    <span>Business Man</span>
-                                </div>
-                                <div class="testimonial-text">
-                                    <img src="{% static 'web/assets/images/ft-icon/5.png' %}" alt="">
-                                    <p>ASM DECOR's master craftsmanship is truly outstanding. Their finishing carpenters and painters transformed our retail space into a masterpiece. The results speak for themselves.</p>
-                                    <h3>Tanneis Akrasenko</h3>
-                                    <span>Business Man</span>
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="col-lg-6 col-12">
@@ -253,7 +227,7 @@
                         {% for update in updates %}
                         <div class="blog-single">
                             <div class="images">
-                                <img src="{% static 'web/assets/images/blog/img-1.jpg' %}" alt="">
+                                <img src="{{update.image.url}}" alt="">
                             </div>
                             <div class="text">
                                 <span>{{update.date}}</span>

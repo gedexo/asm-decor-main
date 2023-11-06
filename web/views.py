@@ -7,7 +7,7 @@ from django.contrib import messages
 
 from django.views.generic import ListView, DetailView, TemplateView
 from django.views.generic.edit import FormView
-from .models import ServiceCategory,Service,Update,Project
+from .models import ServiceCategory,Service,Update,Project,Testimonial
 from .forms import ContactForm,ServiceEnquiryForm,CareerForm
 
 # Create your views here.
@@ -18,7 +18,8 @@ class IndexView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["servicescategories"] = ServiceCategory.objects.all()
-        context["updates"] = Update.objects.all()
+        context["updates"] = Update.objects.all()[:3]
+        context["testimonials"] = Testimonial.objects.all()
         context['is_index'] = True
         return context
     
@@ -29,13 +30,10 @@ class AboutView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["is_about"] = True
+        context["servicescategories"] = ServiceCategory.objects.all()
         return context
     
     
-
-
-
-
 class ProjectListView(ListView):
     model = Project
 
@@ -43,7 +41,6 @@ class ProjectListView(ListView):
         context = super().get_context_data(**kwargs)
         context["is_project"] = True
         return context
-
 
 
 class UpdatesListView(ListView):
