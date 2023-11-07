@@ -5018,7 +5018,7 @@ img {
 .wpo-project-area-s2 .project-wrapper .project-single {
   background: #fff;
   transition: all 0.4s ease-in-out;
-  padding: 28px;
+  padding: 20px 10px 30px;
 }
 @media (max-width: 1280px) {
   .wpo-project-section .project-wrapper .project-single,
@@ -9928,4 +9928,7 @@ img {
 }
 .error-404-section .error-message .theme-btn::after, .error-404-section .error-message .view-cart-btn::after {
   background: #070143;
+}
+.scervice-item-text h2:hover{
+  color: #fff;
 }
