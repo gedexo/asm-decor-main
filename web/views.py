@@ -61,7 +61,6 @@ class UpdateDetailView(DetailView):
         return context
 
 
-
 class ServiceCategoryListView(ListView):
     model = ServiceCategory
     context_object_name="servicescategories"
@@ -85,7 +84,6 @@ class ServiceSingleView(TemplateView):
 
         return context
     
-
 
 class ServiceDetailView(DetailView,FormView):
     model = Service

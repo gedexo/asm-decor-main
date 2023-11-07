@@ -69,9 +69,9 @@
                         <div class="wpo-about-text">
                             <div class="wpo-about-title">
                                 <span>About Us</span>
-                                <h2>Welcome to ASM DECOR</h2>
+                                <h2>WHO WE ARE</h2>
                             </div>
-                            <p>At ASM DECOR, we are the leaders in interior design and contracting, with a legacy dating back to 1988. Our passion for design, dedication to quality, and commitment to our clients have made us a trusted partner in the industry. From turnkey projects to crafting bespoke interior design elements, we bring your vision to life.</p>
+                            <p>ASM Decor, a Dubai-based interior design and contracting company established in 1988, offers a range of services from complete turnkey projects to designing and supplying interior elements. Our experienced team handles everything from civil works to joinery, glass, and aluminum. We take pride in our skilled carpenters and painters, producing top-quality customized furniture for prestigious brands while ensuring adherence to client branding guidelines.</p>
                             <div class="btns">
                                 <a href="{% url "web:about" %}" class="theme-btn" tabindex="0">Discover More</a>
                                
@@ -90,30 +90,55 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6 col-12">
                         <div class="wpo-section-title">
-                            <span>OUR SERVICES</span>
-                            <h2>Experience the Convenience of All-In-One Facilities</h2>
-                           
+                            <span>WHY CHOOSES</span>
+                            <h2>Transforming Spaces with Elegance</h2>
                         </div>
                     </div>
                 </div>
                 <div class="scervice-wrap">
                     <div class="row gutter-y">
-                        {% for service in servicescategories|slice:":4" %}
                         <div class="col-lg-3 col-md-6 col-12">
-                            <a href="{% url "web:service-single" service.slug %}"><div class="scervice-item item-height">
+                            <div class="scervice-item item-height">
                                 <div class="scervice-item-img">
-                                    <img src="{{ service.icon.url }}" alt="">
+                                    <img src="{% static 'web/assets/images/services/icon-4.png' %}" alt="">
                                 </div>
                                 <div class="scervice-item-text">
-                                    <a href="{% url "web:service-single" service.slug %}">
-                                        <h2>{{service.name}}</h2>
-                                    </a>
-                                    <p>{{service.description|truncatechars:50}}</p>
+                                        <h2>Range of Services</h2>
+                                    <p>Wide range of services offered by ASM DECOR, from complete turnkey projects to the design, manufacture, and supply of interior design elements. </p>
                                 </div>
-                            </div></a>
+                            </div>
                         </div>
-                        {% endfor %}
-                        
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="scervice-item item-height">
+                                <div class="scervice-item-img">
+                                    <img src="{% static 'web/assets/images/services/icon-3.png' %}" alt="">
+                                </div>
+                                <div class="scervice-item-text">
+                                        <h2>Expertise and Experience</h2>
+                                    <p>Highlighting the company's extensive experience and expertise in the field instills confidence in clients, demonstrating credibility and competence.</p>
+                                </div>
+                            </div>
+                        </div><div class="col-lg-3 col-md-6 col-12">
+                            <div class="scervice-item item-height">
+                                <div class="scervice-item-img">
+                                    <img src="{% static 'web/assets/images/services/icon-1.png' %}" alt="">
+                                </div>
+                                <div class="scervice-item-text">
+                                        <h2>Skilled Workforce</h2>
+                                    <p>Emphasizing skilled finishing craftsmen demonstrates our commitment to quality, assuring clients of top-notch craftsmanship for their projects.</p>
+                                </div>
+                            </div>
+                        </div><div class="col-lg-3 col-md-6 col-12">
+                            <div class="scervice-item item-height">
+                                <div class="scervice-item-img">
+                                    <img src="{% static 'web/assets/images/services/icon-2.png' %}" alt="">
+                                </div>
+                                <div class="scervice-item-text">
+                                        <h2>Customization and Branding</h2>
+                                    <p>Top-quality custom furniture and adherence to branding guidelines shows our dedication to meeting client needs and maintaining brand consistency.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -150,25 +175,25 @@
                         <div class="wpo-fun-fact-grids clearfix">
                             <div class="grid">
                                 <div class="info">
-                                    <h3><span class="odometer" data-count="25">00</span></h3>
+                                    <h3><span class="odometer" data-count="35">00</span></h3>
                                     <p>Years Of Experience</p>
                                 </div>
                             </div>
                             <div class="grid">
                                 <div class="info">
-                                    <h3><span class="odometer" data-count="32">00</span></h3>
+                                    <h3><span class="odometer" data-count="30">00</span></h3>
                                     <p>Expert Specialist</p>
                                 </div>
                             </div>
                             <div class="grid">
                                 <div class="info">
-                                    <h3><span class="odometer" data-count="321">00</span>+</h3>
+                                    <h3><span class="odometer" data-count="300">00</span>K+</h3>
                                     <p>Successful Project</p>
                                 </div>
                             </div>
                             <div class="grid">
                                 <div class="info">
-                                    <h3><span class="odometer" data-count="785">00</span>+</h3>
+                                    <h3><span class="odometer" data-count="800">00</span>K+</h3>
                                     <p>Happy Customers</p>
                                 </div>
                             </div>
@@ -180,6 +205,43 @@
         </section>
         <!-- end wpo-fun-fact-section -->
 
+        <section class="wpo-service-section ">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-12">
+                        <div class="wpo-section-title">
+                            <span>OUR SERVICES</span>
+                            <h2>Experience the Convenience of All-In-One Facilities</h2>
+        
+                        </div>
+                    </div>
+                </div>
+                <section class="wpo-project-section">
+                    <div class="project-wrapper">
+                        <div class="container-fluid">
+                            <div class="row project-slider">
+                                {% for service in servicescategories %}
+                                <div class="col-lg-3">
+                                    <div class="project-single">
+                                        <div class="project-single-img">
+                                            <a href="{% url "web:service-single" service.slug %}">
+                                                <img src="{{ service.image.url }}" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="project-single-text">
+                                            <a href="{% url "web:service-single" service.slug %}">
+                                                <h2>{{service.name}}</h2>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+        </section>
+
         <!-- start wpo-testimonial-section -->
         <div class="wpo-testimonial-section-s2 section-padding pad-tp">
             <div class="container">
@@ -189,7 +251,6 @@
                             <div class="testimonial-slider">
                                 {% for testimonial in testimonials %}
                                 <div class="testimonial-text">
-                                    <img src="{% static 'web/assets/images/ft-icon/5.png' %}" alt="">
                                     <p>{{testimonial.review}}</p>
                                     <h3>{{testimonial.name}}</h3>
                                     <span>{{testimonial.designation}}</span>
@@ -199,7 +260,6 @@
                         </div>
                         <div class="col-lg-6 col-12">
                             <div class="testimonial-img">
-                                <img src="{% static 'web/assets/images/testimonial.png' %}" alt="">
                             </div>
                         </div>
                     </div>

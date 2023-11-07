@@ -11,7 +11,6 @@ urlpatterns = [
     path("project/", views.ProjectListView.as_view(), name="project"),
     path("updates/", views.UpdatesListView.as_view(), name="update"),
     path("updates/<slug>/", views.UpdateDetailView.as_view(), name="update-detail"),
-    # path("update-detail/<slug>/", views.update_detail, name="update_detail"),
     path("career/", views.CareerView.as_view(), name="career"),
     path("service/", views.ServiceCategoryListView.as_view(), name="service"),
     path("services/<slug:category_slug>/", views.ServiceSingleView.as_view(), name="service-single"),

@@ -6,6 +6,7 @@ from .models import Service,ServiceCategory,Contact,ServiceEnquiry,Update,Career
 @admin.register(ServiceCategory)
 class ServiceCategoryAdmin(admin.ModelAdmin):
     list_display = ("name",)
+    search_fields = ("name",)
     prepopulated_fields = {"slug": ("name",)}
 
 
