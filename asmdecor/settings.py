@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'versatileimagefield',
     "tinymce",
     
     'web',
@@ -154,3 +155,16 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
 SILENCED_SYSTEM_CHECKS = ["security.W019"]
+
+
+VERSATILEIMAGEFIELD_SETTINGS = {
+	'cache_length': 2592000,
+	'cache_name': 'versatileimagefield_cache',
+	'jpeg_resize_quality': 70,
+	'sized_directory_name': '__sized__',
+	'filtered_directory_name': '__filtered__',
+	'placeholder_directory_name': '__placeholder__',
+	'create_images_on_demand': True,
+	'image_key_post_processor': None,
+	'progressive_jpeg': False
+}

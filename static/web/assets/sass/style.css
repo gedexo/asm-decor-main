@@ -5123,7 +5123,7 @@ img {
 }
 .wpo-testimonial-section .testimonial-wrapper,
 .wpo-testimonial-section-s2 .testimonial-wrapper {
-  background: url(../images/testimonial-bg.jpg) center/cover, no-repeat;
+  background: url(../images/testimonialnew.png) center/cover, no-repeat;
   width: 100%;
   position: relative;
   z-index: 1;
@@ -9929,6 +9929,7 @@ img {
 .error-404-section .error-message .theme-btn::after, .error-404-section .error-message .view-cart-btn::after {
   background: #070143;
 }
+
 .scervice-item-text h2:hover{
   color: #fff;
 }

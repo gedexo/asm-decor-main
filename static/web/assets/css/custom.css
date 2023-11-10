@@ -10,7 +10,7 @@
 }
 .wpo-blog-section .blog-wrapper .blog-single:hover .text.services {
     background: #EC1616;
-    margin-top: 10px;
+    margin-top: 0px;
     padding: 20px 30px 35px;
     border: 1px solid transparent;
     border-top: 0;
@@ -42,4 +42,21 @@
     .pad-bt{
         padding-bottom: 50px;
     }
+}
+.wpo-service-section .scervice-wrap .scervice-item:hover .scervice-item-text h2{
+    color: #ffffff !important;
+}
+
+.blog-sidebar .wpo-newsletter-widget .service-form input{
+    border: 1px solid #ebebeb;
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+.blog-sidebar .wpo-newsletter-widget .service-form button{
+    border-radius: 0px;
+}
+
+.career-cv label{
+    color: rgb(24, 24, 24);
 }

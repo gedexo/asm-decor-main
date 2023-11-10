@@ -1,7 +1,27 @@
 from django.db import models
 from tinymce.models import HTMLField
+from versatileimagefield.fields import VersatileImageField
 
 # Create your models here.
+
+class Banner(models.Model):
+    image=VersatileImageField(upload_to='banner')
+    title=models.CharField(max_length=100)
+    description=models.TextField()
+
+    def __str__(self):
+        return self.title
+    
+class Client(models.Model):
+    image=VersatileImageField(upload_to='client')
+    order = models.PositiveIntegerField(unique=True)
+
+    class Meta:
+        ordering = ("order",)
+        verbose_name_plural = "Clients"
+        verbose_name = "Client"
+
+
 
 class ServiceCategory(models.Model):
     name=models.CharField(max_length=30)

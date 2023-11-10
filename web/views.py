@@ -7,7 +7,7 @@ from django.contrib import messages
 
 from django.views.generic import ListView, DetailView, TemplateView
 from django.views.generic.edit import FormView
-from .models import ServiceCategory,Service,Update,Project,Testimonial
+from .models import ServiceCategory,Service,Update,Project,Testimonial,Banner,Client
 from .forms import ContactForm,ServiceEnquiryForm,CareerForm
 
 # Create your views here.
@@ -20,6 +20,8 @@ class IndexView(TemplateView):
         context["servicescategories"] = ServiceCategory.objects.all()
         context["updates"] = Update.objects.all()[:3]
         context["testimonials"] = Testimonial.objects.all()
+        context["banners"] = Banner.objects.all()
+        context["clients"] = Client.objects.all()
         context['is_index'] = True
         return context
     
@@ -101,7 +103,7 @@ class ServiceDetailView(DetailView,FormView):
         )
 
         whatsapp_api_url = "https://api.whatsapp.com/send"
-        phone_number = "918943915070"
+        phone_number = "+97143511152"
         encoded_message = urllib.parse.quote(message)
         whatsapp_url = f"{whatsapp_api_url}?phone={phone_number}&text={encoded_message}"
 

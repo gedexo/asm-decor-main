@@ -1,7 +1,14 @@
 from django.contrib import admin
-from .models import Service,ServiceCategory,Contact,ServiceEnquiry,Update,Career,Project,Testimonial
+from .models import Service,ServiceCategory,Contact,ServiceEnquiry,Update,Career,Project,Testimonial,Banner,Client
 
 
+@admin.register(Banner)
+class BannerAdmin(admin.ModelAdmin):
+    list_display = ("title",)
+
+@admin.register(Client)
+class ClientAdmin(admin.ModelAdmin):
+    list_display = ("order",)
 
 @admin.register(ServiceCategory)
 class ServiceCategoryAdmin(admin.ModelAdmin):

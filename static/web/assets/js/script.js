@@ -649,12 +649,14 @@
     -------------------------------------------*/
 
     $('.project-slider').slick({
-        dots: false,
+        dots: true,
         infinite: true,
-        arrows: false,
+        arrows: true,
         speed: 300,
         slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
         responsive: [{
                 breakpoint: 1107,
                 settings: {
@@ -691,7 +693,8 @@
         arrows: false,
         speed: 500,
         fade: true,
-        cssEase: 'linear'
+        cssEase: 'linear',
+        
     });
 
     /*------------------------------------------
