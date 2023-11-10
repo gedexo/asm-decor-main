@@ -103,7 +103,7 @@ class ServiceDetailView(DetailView,FormView):
         )
 
         whatsapp_api_url = "https://api.whatsapp.com/send"
-        phone_number = "+97143511152"
+        phone_number = "97143511152"
         encoded_message = urllib.parse.quote(message)
         whatsapp_url = f"{whatsapp_api_url}?phone={phone_number}&text={encoded_message}"
 

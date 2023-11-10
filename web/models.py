@@ -24,9 +24,13 @@ class Client(models.Model):
 
 
 class ServiceCategory(models.Model):
+    order = models.PositiveIntegerField(null=True, blank=True)
     name=models.CharField(max_length=30)
     slug = models.SlugField(max_length=100, unique=True)
     image=models.ImageField()
+
+    class Meta:
+        ordering = ("order",)
 
     def __str__(self):
         return self.name

@@ -60,3 +60,10 @@
 .career-cv label{
     color: rgb(24, 24, 24);
 }
+.asm-text{
+    color: #EC1616;
+}
+
+.wpo-service-section .scervice-wrap .scervice-item:hover .scervice-item-text p .asm-text{
+    color: #080808;
+}
