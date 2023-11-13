@@ -4331,6 +4331,7 @@ img {
     top: 16%;
     left: 10%;
   }
+
 }
 @media (max-width: 425px) {
   .wpo-service-section .shape-1::before,
@@ -4394,6 +4395,7 @@ img {
 .wpo-service-section-s3 .scervice-wrap .scervice-item {
     margin-bottom: 30px;
   }
+
 }
 @media (max-width: 767px) {
   .wpo-service-section .scervice-wrap .scervice-item,
@@ -4461,6 +4463,7 @@ img {
 .wpo-service-section-s3 .scervice-wrap .scervice-item .scervice-item-text a h2 {
     font-size: 22px;
   }
+
 }
 @media (max-width: 767px) {
   .wpo-service-section .scervice-wrap .scervice-item .scervice-item-text a h2,
@@ -5025,6 +5028,7 @@ img {
 .wpo-project-area-s2 .project-wrapper .project-single {
     padding: 30px 25px;
   }
+  
 }
 @media (max-width: 580px) {
   .wpo-project-section .project-wrapper .project-single,
@@ -5068,7 +5072,7 @@ img {
 .wpo-project-area-s2 .project-wrapper .project-single .project-single-text a h2 {
   font-family: "Vidaloka", serif;
   text-transform: capitalize;
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 400;
   line-height: 30px;
   margin-bottom: 0;
@@ -5079,7 +5083,7 @@ img {
 @media (max-width: 1499px) {
   .wpo-project-section .project-wrapper .project-single .project-single-text a h2,
 .wpo-project-area-s2 .project-wrapper .project-single .project-single-text a h2 {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 .wpo-project-section .project-wrapper .project-single:hover .project-single-img img,
@@ -5881,6 +5885,7 @@ img {
     font-size: 40px;
     font-size: calc-rem-value(40);
   }
+
 }
 @media (max-width: 767px) {
   .wpo-fun-fact-section .grid h3,
@@ -5891,7 +5896,7 @@ img {
 }
 .wpo-fun-fact-section .grid h3 + p,
 .wpo-fun-fact-section-s2 .grid h3 + p {
-  font-size: 20px;
+  font-size: 16px;
   font-size: calc-rem-value(15);
   text-transform: uppercase;
   margin: 0;
@@ -5933,6 +5938,11 @@ img {
 .wpo-fun-fact-section .shape-2 svg,
 .wpo-fun-fact-section-s2 .shape-2 svg {
   fill: #070143;
+}
+@media (min-width: 1024px) {
+  .wpo-fun-fact-grids{
+    margin-left: 160px;
+  }
 }
 
 /*======================================
@@ -9933,3 +9943,4 @@ img {
 .scervice-item-text h2:hover{
   color: #fff;
 }
+
